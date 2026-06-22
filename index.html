@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portifolio</title>
+</head>
+
+<body>
+    <div class="particula"></div>
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#Carreira" class="menu-link">Carreira</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="./img/carlos.jpeg" alt="foto de jose carlos" class="foto-perfil">
+        <h1> Jose Carlos</h1>
+        <p class="cabecalho-sub-titulo"> Analista de Sistema OEM</p>
+
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Atualmente, trabalho na parte de análise pela empresa Icomon, prestando serviço para a operadora Vivo.
+                Atuo na análise da rede metálica e GPON, direcionando os técnicos para as tratativas de falhas e
+                acompanhando-os na resolução.
+            </p>
+        </div>
+
+    </section>
+
+    
+
+    <section id="Carreira" class="Carreira">
+        <h2 class="projetos-titulo">Carreira</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/cruzeiro.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Cursando</h3>
+                    <p class="paragrafo-projetos">Bacharelado em Ciência da Computação</p>
+                </div>
+            </div>
+
+
+            <div class="projetos-card">
+                <img src="./img/icomon.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Atuando</h3>
+                    <p class="paragrafo-projetos">Analista de Sistema OEM</p>
+                </div>
+            </div>
+
+
+            <div class="projetos-card">
+                <img src="./img/desenho.jpeg" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Jose Carlos</h3>
+                    <p class="paragrafo-projetos">proativo, comprometido e organizado, gosto de jogar videos game e asisitir anime, series e um bom filme.</p>
+                </div>
+
+            </div>
+
+
+    </section>
+
+    <section id="contatos" class="Contatos">
+        <H2 class="contatos-titulo">Contatos</H2>
+
+        <form class="formulario-contatos" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite Sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar</button>
+
+
+        </form>
+
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault()
+
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = "5585986761858"
+
+            const texto = `Olá, Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+            
+            window.open(url, '_blank');
+
+
+        }
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
